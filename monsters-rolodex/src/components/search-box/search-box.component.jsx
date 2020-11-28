@@ -8,6 +8,6 @@ export const SearchBox = ({ placeholder, handleChange }) => (
         type='search' 
         placeholder={placeholder} 
         onChange={handleChange} 
-  />
+    />
 
 )

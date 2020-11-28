@@ -19,6 +19,10 @@ componentDidMount(){
      .then(users => this.setState({ monsters:users }));
 }
 
+handleChange = (e) => {
+  this.setState({ searchField: e.target.Value });
+}
+
   render() {
     const { monsters, searchField } = this.state;
     const filteredMonsters = monsters.filter(monster =>
@@ -30,7 +34,7 @@ componentDidMount(){
     
         <SearchBox
           placeholder='search monsters' 
-          handleChange=e => this.setState({ searchField: e.target.value })
+          handleChange={this.handleChange}
         />
         <CardList monsters={filteredMonsters} />
           
